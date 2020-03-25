@@ -42,6 +42,8 @@
 
 		FROM   **		在**
 
+		UNION			联合查询 合并多个结果查询
+
 		WHERE  **		过滤 **
 
 			>  >=  <  <=  =  <>(不等于)
@@ -69,27 +71,46 @@
 		    x			只有一个存在时，返回含x之前的数量
 		    x,y			两个存在时，返回x后的y数量	
 
-	
+		INNER JOIN		内连接	  INNER可选
+		    ON			关联条件
+			status		状态
+						SELECT	*
+						FROM 表1
+						INNER JOIN 表2
+							ON 表1列 = 表2列
+
+		OUTER JOIN		外连接		OUTER可选
+		    LEFT JOIN		左连接		返回左边全部数据 且 右边相等的返回 没有返回NULL
+		    RIGHT JOIN		右链接		返回右边全部数据 且 左边相等的返回 没有返回NULL
+			 USING(*)		两个列名相同可以替换ON
+
+		CROSS JOIN		交叉联接
+			
 	SELECT * FROM *
 
 	SELECT * FROM * WHERE *
 
 	SELECT * FROM * ORDER BY *
 
+	INSERT INTO 表(插入项，插入项)			插入/插入多值
+		VALUE(插入值),
+		     (插入值)
 
-		REGEXP	正则表达式
+	UPDATE 表名称 				改/更新表
+	SET 列名称 = 新值 
+	WHERE 列名称 = 某值
 
+	DELETE FROM 表名			删除表
+	WHERE 条件
+
+
+	REGEXP	正则表达式
+
+	^			开头
+
+	$			结尾
+
+	|			或
 		
-		^			开头
-
-		$			结尾
-
-		|			或
-		
-		[]			范围内匹配
-			-		至     ^4[1-5]|[-]$2   4开头 1到5 或 任意范围 2结尾 
-
-
-	
-
-85：00
+	[]			范围内匹配
+		-		至     ^4[1-5]|[-]$2   4开头 1到5 或 任意范围 2结尾 
